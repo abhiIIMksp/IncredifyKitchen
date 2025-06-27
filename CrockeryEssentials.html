@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Crockery Collection | Quality Tableware Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <style>
+        :root {
+            --primary-blue: #1a4b8c;
+            --secondary-blue: #2a6fba;
+            --light-blue: #e6f0fa;
+            --dark-blue: #0d2b4e;
+            --accent-gold: #d4af37;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(26, 75, 140, 0.8), rgba(26, 75, 140, 0.9)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-gold);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .badge-category {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-gold);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .quality-section {
+            background-color: var(--light-blue);
+            padding: 80px 0;
+        }
+        
+        .quality-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .quality-icon {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .form-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Logo.png" alt="Incredify Kitchens Logo" height="40" class="d-inline-block align-top">
+                <span class="ms-2">Incredify Kitchens</span>
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quality">Quality</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1 class="hero-title">Premium Crockery for Discerning Tastes</h1>
+            <p class="hero-subtitle">Elevate your dining experience with our exquisite collection of tableware crafted from the finest materials including opalware, glass, ceramic, and chinaware.</p>
+            <a href="#products" class="btn btn-light btn-lg">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Premium Quality</h3>
+                        <p>Each piece is carefully selected for its superior craftsmanship and durability to enhance your dining experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Complete Collections</h3>
+                        <p>From beer mugs to dinner plates, we offer comprehensive sets that create harmonious table settings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Trusted Supplier</h3>
+                        <p>With years of industry experience, we've built relationships with the finest manufacturers worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5 bg-light" id="products">
+        <div class="container">
+            <h2 class="text-center section-title">Our Product Range</h2>
+            <p class="text-center mb-5">Discover our carefully curated selection of premium tableware</p>
+            
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="Beer_Mugs_1.png" class="card-img-top product-img" alt="Beer Mugs">
+                            <span class="badge-category">Glassware</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Crafted Beer Mugs</h5>
+                            <p class="card-text">Premium glass mugs designed to enhance your beer drinking experience with perfect weight and balance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="Wine_glass.png" class="card-img-top product-img" alt="Wine Glasses">
+                            <span class="badge-category">Glassware</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Elegant Wine Glasses</h5>
+                            <p class="card-text">Crystal-clear glasses designed to showcase your wine's color and enhance its aromas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="Dinner_ware.png" class="card-img-top product-img" alt="Dinner Plates">
+                            <span class="badge-category">Opalware</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Opalware Dinner Sets</h5>
+                            <p class="card-text">Durable and elegant opalware plates that resist chipping and retain their luster for years.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="Tea_cups.png" class="card-img-top product-img" alt="Coffee Cups">
+                            <span class="badge-category">Ceramic</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Artisan Coffee Cups</h5>
+                            <p class="card-text">Handcrafted ceramic cups that keep your beverages at the perfect temperature.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#contact" class="btn btn-primary">Request Full Catalog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Assurance Section -->
+    <section class="quality-section py-5" id="quality">
+        <div class="container">
+            <h2 class="text-center section-title">Our Quality Commitment</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="quality-item">
+                        <div class="quality-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Material Excellence</h4>
+                            <p>We source only food-grade materials that meet international safety standards, ensuring your tableware is as safe as it is beautiful.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <div class="quality-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Durability Testing</h4>
+                            <p>Every product line undergoes rigorous testing for chip resistance, thermal shock, and everyday wear to guarantee longevity.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="quality-item">
+                        <div class="quality-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Design Integrity</h4>
+                            <p>Our designs balance aesthetic appeal with functional ergonomics, creating pieces that are as practical as they are stylish.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <div class="quality-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Consistent Quality</h4>
+                            <p>We maintain strict quality control measures to ensure every shipment meets our exacting standards for perfection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-5" id="contact">
+        <div class="container">
+            <h2 class="text-center section-title">Get In Touch</h2>
+            <p class="text-center mb-5">Have questions about our products? Interested in wholesale opportunities? Contact us today.</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="form-container">
+                        <div style="
+                            max-width: 800px; 
+                            margin: 0 auto;
+                            padding: 0; /* Remove inner padding to align image flush */
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                            border-radius: 12px;
+                            background: white;
+                            overflow: hidden; /* Ensure clean rounded corners */
+                            position: relative;
+                        ">
+                            <!-- Beer_Mugs.jpg Header Image -->
+                            <!-- Google Form iframe overlapping for header removal -->
+                            <div style="position: relative; top: -40px;">
+                                <iframe aria-label='Contact Us' frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.in/abhimaitgm1/form/ContactUs/formperma/wXM303kc_gUCW2ASWZmsjgK-MmxqRo7XI7YQNfKr6d4' width="100%" 
+                            height="800" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="h-100 d-flex flex-column justify-content-center">
+                        <h3 class="mb-4">Why Choose Us?</h3>
+                        <div class="mb-4">
+                            <h5><i class="fas fa-star text-warning me-2"></i> Curated Selection</h5>
+                            <p>We carefully select each item in our collection to ensure it meets our standards for quality, design, and functionality.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5><i class="fas fa-truck text-primary me-2"></i> Reliable Shipping</h5>
+                            <p>Our secure packaging methods ensure your order arrives in perfect condition, with tracking for your peace of mind.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5><i class="fas fa-headset text-info me-2"></i> Expert Support</h5>
+                            <p>Our knowledgeable team is ready to assist you with product selection, bulk orders, and any questions you may have.</p>
+                        </div>
+                        <div>
+                            <h5><i class="fas fa-building text-secondary me-2"></i> Business Information</h5>
+                            <p><strong>Email:</strong> incredifytechnologies@gmail.com<br>
+                            <strong>Phone:</strong> +91 8802054865<br>
+                            <strong>Operating Hours:</strong> Mon-Sat, 10AM - 7PM <br>
+                            <strong>Address</strong> B 451 Main Market moti nagar, opposite bata lane
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--primary-blue); color: white;">
+                    <h5 class="modal-title" id="infoModalLabel">Incredify Kitchens Information</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs mb-4" id="infoTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab">About Us</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="privacy-tab" data-bs-toggle="tab" data-bs-target="#privacy" type="button" role="tab">Privacy Policy</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">FAQ</button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="about" role="tabpanel" aria-labelledby="about-tab">
+                            <h3 class="mb-4" style="color: var(--primary-blue);">About Incredify Kitchens</h3>
+                            <p style="font-size: 15px; font-style:oblique;">Welcome to Incredify Kitchens, where everyday moments turn into beautiful memories. Founded in 2023, we are dedicated to bringing beautifully crafted crockery into homes that value warmth, style, and quality.</p>
+                            
+                            <p style="font-size: 15px; font-style:oblique;">From elegant beer mugs and ceramic cups to timeless plates, glasses, and tumblers, each piece in our collection is carefully chosen to add a touch of joy to your table. We believe your kitchen deserves pieces that not only serve but also inspire.</p>
+                            
+                            <p style="font-size: 15px; font-style:oblique;">Thank you for letting us be a part of your gatherings, your celebrations, and your quiet morning coffees.</p>
+                            
+                            <p class="fw-bold" style="font-size: 15px; font-style:oblique;">Incredify Kitchens – Beautiful kitchens, beautifully made.</p>
+                        </div>
+                        
+                        <div class="tab-pane" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
+                            <h3 class="mb-4" style="color: var(--primary-blue);">Privacy Policy</h3>
+                            <p style="font-size: 15px; font-style:oblique;">At <strong>Incredify Kitchens</strong>, we respect your privacy and are committed to protecting any information you share with us.</p>
+                            
+                            <h5 class="mt-4"><strong>Information We Collect</strong></h5>
+                            <p style="font-size: 15px; font-style:oblique;">We do <strong>not</strong> automatically collect personal information or use cookies on our website.</p>
+                            <p style="font-size: 15px; font-style:oblique;">We may collect your <strong>name, mobile number, and email address</strong> <strong>only if you choose to provide them</strong> (for example, when you contact us for inquiries or support).</p>
+                            
+                            <h5 class="mt-4"><strong>How We Use Your Information</strong></h5>
+                            <p style="font-size: 15px; font-style:oblique;">We use the information you provide <strong>solely to respond to your inquiries, fulfill your requests, or communicate regarding our products and services.</strong></p>
+                            <p style="font-size: 15px; font-style:oblique;">We do <strong>not share, sell, or disclose your personal information to third parties</strong>.</p>
+                            
+                            <h5 class="mt-4"><strong>Data Security</strong></h5>
+                            <p style="font-size: 15px; font-style:oblique;">We take reasonable steps to keep your information secure and protect it from unauthorized access or disclosure.</p>
+                            
+                            <h5 class="mt-4"><strong>Your Rights</strong></h5>
+                            <p style="font-size: 15px; font-style:oblique;">If you wish to update or request deletion of your personal information, please contact us using the details below.</p>
+                            
+                            <h5 class="mt-4"><strong>Changes to This Policy</strong></h5>
+                            <p style="font-size: 15px; font-style:oblique;">We may update this Privacy Policy as needed. Any changes will be posted on this page with an updated effective date.</p>
+                            
+                            <p class="fw-bold mt-4" style="font-size: 15px; font-style:oblique;">Incredify Kitchens – Bringing beautiful crockery to your home with trust and simplicity.</p>
+                        </div>
+                        
+                        <div class="tab-pane" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+                            <h3 class="mb-4" style="color: var(--primary-blue);">Frequently Asked Questions</h3>
+                            
+                            <h5 class="mt-4">1️⃣ Do you offer delivery across India?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">Yes, we deliver our crockery items across India.</p>
+                            
+                            <h5 class="mt-4">2️⃣ Is there a delivery charge?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">We offer <strong>free delivery on all orders above ₹750</strong>. For orders below this amount, a nominal delivery fee will apply, shown at checkout.</p>
+                            
+                            <h5 class="mt-4">3️⃣ What is your return and exchange policy?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">We accept <strong>returns and exchanges</strong> if you receive a damaged or incorrect product. Please inform us within <strong>48 hours of delivery</strong> with a photo, and we will guide you through the return or exchange process.</p>
+                            
+                            <h5 class="mt-4">4️⃣ How can I place a bulk order for my restaurant or café (HORECA)?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">We take <strong>bulk orders for hotels, restaurants, and cafes (HORECA)</strong>. Please contact us at <strong>incredifytechnologies@gmail.com</strong> or WhatsApp at <strong>+91 8802054865</strong> with your requirements, and we will share product options, pricing, and delivery timelines.</p>
+                            
+                            <h5 class="mt-4">5️⃣ How can I contact you for order-related queries?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">You can reach us via email at <strong>incredifytechnologies@gmail.com</strong> or WhatsApp at <strong>+91 8802054865</strong> for any queries related to your order or product details.</p>
+                            
+                            <h5 class="mt-4">6️⃣ How long does delivery take?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">Orders are typically delivered within <strong>5–7 business days</strong>, depending on your location. We will share tracking details once your order is shipped.</p>
+                            
+                            <h5 class="mt-4">7️⃣ Can I cancel my order?</h5>
+                            <p style="font-size: 15px; font-style:oblique;">Orders can be cancelled before they are shipped. Please contact us immediately if you wish to cancel, and we will assist you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" 
+                    style="
+                        background: linear-gradient(135deg, #6c63ff, #836fff);
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+                        transition: background 0.3s, transform 0.2s;
+                    "
+                    onmouseover="this.style.background='linear-gradient(135deg, #5a54e0, #6d5eea)'"
+                    onmouseout="this.style.background='linear-gradient(135deg, #6c63ff, #836fff)'"
+                    onmousedown="this.style.transform='scale(0.96)'"
+                    onmouseup="this.style.transform='scale(1)'"
+                >
+                    Close
+                </button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to open modal with specific tab
+        function openInfoModal(tab) {
+            var myModal = new bootstrap.Modal(document.getElementById('infoModal'));
+            myModal.show();
+            
+            if(tab) {
+                setTimeout(function() {
+                    var tabEl = document.querySelector(tab);
+                    if(tabEl) {
+                        var tabInstance = new bootstrap.Tab(tabEl);
+                        tabInstance.show();
+                    }
+                }, 100);
+            }
+        }
+        
+        // Add click handlers for footer links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('a[href="#about"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openInfoModal('#about-tab');
+            });
+            
+            document.querySelector('a[href="#privacypolicy"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openInfoModal('#privacy-tab');
+            });
+            
+            document.querySelector('a[href="#faqitems"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openInfoModal('#faq-tab');
+            });
+
+            document.querySelector('a[href="#Returns"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openInfoModal('#faq-tab');
+            });
+
+            document.querySelector('a[href="#Wholesale"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openInfoModal('#faq-tab');
+            });
+
+            document.querySelector('a[href="#Shipping"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openInfoModal('#faq-tab');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Incredify Kitchens</h5>
+                    <p>Providing premium tableware solutions for homes and businesses since 2023. Our commitment to quality transforms ordinary meals into extraordinary experiences.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon" id="instagram-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/918802054865?text=Hi%2C%20i%20would%20need%20to%20know%20more%20about%20your%20products" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 col-6 mb-4 mb-md-0">
+                    <h5>Products</h5>
+                    <div class="footer-links">
+                        <a href="#">Drinkware</a>
+                        <a href="#">Dinnerware</a>
+                        <a href="#">Serveware</a>
+                        <a href="#">Specialty Items</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 col-6 mb-4 mb-md-0">
+                    <h5>Materials</h5>
+                    <div class="footer-links">
+                        <a href="#">Opalware</a>
+                        <a href="#">Glass</a>
+                        <a href="#">Ceramic</a>
+                        <a href="#">Chinaware</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 col-6">
+                    <h5>Company</h5>
+                    <div class="footer-links">
+                        <a href="#about">About Us</a>
+                        <a href="#quality">Quality</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#privacypolicy">Privacy Policy</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 col-6">
+                    <h5>Support</h5>
+                    <div class="footer-links">
+                        <a href="#faqitems">FAQ</a>
+                        <a href="#Shipping">Shipping</a>
+                        <a href="#Returns">Returns</a>
+                        <a href="#Wholesale">Wholesale</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright text-center">
+                <p class="mb-0">&copy; 2023 Incredify Kitchens. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('instagram-link').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            alert("We're working on our Instagram presence! 🚀\n\nFollow us soon for beautiful kitchen inspirations and exclusive offers!\n\nFeel free to connect with us on whatsapp");
+            
+            // Alternatively, you could use a Bootstrap modal for a more polished look:
+            /*
+            const instaModal = new bootstrap.Modal(document.getElementById('instagramModal'));
+            instaModal.show();
+            */
+        });
+        </script>
+</body>
+</html>

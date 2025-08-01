@@ -738,11 +738,15 @@
 
 <script>
   window.onload = function () {
-    alert("This is a business page of Incredify Kitchens.\nTo visit the eCommerce store, click OK.");
-    window.location.replace("https://incredifykitchens.in");
+    const userConfirmed = confirm("You're viewing the business site of Incredify Kitchens.\nWould you like to visit our eCommerce store?");
+    if (userConfirmed) {
+      window.location.href = "https://incredifykitchens.in";
+    }
+    // If user clicks "Cancel", nothing happens and they stay on this page.
   };
 </script>
 </body>
 </html>
+
 
 
